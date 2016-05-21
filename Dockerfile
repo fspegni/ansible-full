@@ -11,7 +11,7 @@ RUN apt update && \
       python-psutil \
       sshpass && \
     rm -rf /var/lib/apt/lists/* && \
-    useradd --gid 1000 --uid 1000 --home-dir /code app
+    useradd --uid 1000 --home-dir /code app
 
 ENV ANSIBLE_CONFIG=/etc/ansible/ansible.cfg \
     ANSIBLE_ROOT=/code \
@@ -20,5 +20,6 @@ ENV ANSIBLE_CONFIG=/etc/ansible/ansible.cfg \
 COPY ansible.cfg /etc/ansible/ansible.cfg
 
 USER app
+WORKDIR /code
 
 VOLUME [".:/code:ro"]
