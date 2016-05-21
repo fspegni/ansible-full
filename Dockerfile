@@ -10,12 +10,15 @@ RUN apt update && \
       python-passlib \
       python-psutil \
       sshpass && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
+    useradd --gid 1000 --uid 1000 --home-dir /code app
 
 ENV ANSIBLE_CONFIG=/etc/ansible/ansible.cfg \
     ANSIBLE_ROOT=/code \
     ANSIBLE_INVENTORY=/code/inventory.ini
 
 COPY ansible.cfg /etc/ansible/ansible.cfg
+
+USER app
 
 VOLUME [".:/code:ro"]
