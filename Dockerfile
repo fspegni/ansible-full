@@ -21,5 +21,3 @@ COPY ansible.cfg /etc/ansible/ansible.cfg
 
 USER app
 WORKDIR /code
-
-VOLUME [".:/code:ro"]
