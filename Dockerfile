@@ -9,6 +9,7 @@ RUN apt update && \
       python-openssl \
       python-passlib \
       python-psutil \
+      python-setuptools \
       sshpass && \
     rm -rf /var/lib/apt/lists/* && \
     useradd --uid 1000 --home-dir /code app
