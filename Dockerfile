@@ -8,11 +8,13 @@ RUN apt update && \
       python-jabberbot \
       python-openssl \
       python-passlib \
+      python-pip \
       python-psutil \
       python-pyasn1 \
-      python-setuptools \
       sshpass && \
     rm -rf /var/lib/apt/lists/* && \
+    pip install -U pip && \
+    pip install -U setuptools && \
     useradd --uid 1000 --home-dir /code app
 
 ENV ANSIBLE_CONFIG=/etc/ansible/ansible.cfg \
