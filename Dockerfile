@@ -9,6 +9,7 @@ RUN apt update && \
       python-openssl \
       python-passlib \
       python-psutil \
+      python-pyasn1 \
       python-setuptools \
       sshpass && \
     rm -rf /var/lib/apt/lists/* && \
