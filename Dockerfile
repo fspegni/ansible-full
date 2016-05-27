@@ -2,19 +2,22 @@ FROM williamyeh/ansible:1.9-debian8
 
 RUN apt update && \
     apt install -y \
-      ipython \
-      python-apt \
-      python-httplib2 \
-      python-jabberbot \
-      python-openssl \
-      python-passlib \
       python-pip \
-      python-psutil \
-      python-pyasn1 \
       sshpass && \
     rm -rf /var/lib/apt/lists/* && \
     pip install -U pip && \
-    pip install -U setuptools && \
+    rm -rf ~/.pip/cache/ && \
+    /usr/local/bin/pip install --no-cache-dir -U \
+      'ansible>=1.9.4,<2.0' \
+      apt \
+      jabberbot \
+      httplib2 \
+      ipython \
+      passlib \
+      psutil \
+      pyasn1 \
+      pyopenssl \
+      setuptools && \
     useradd --uid 1000 --home-dir /code app
 
 ENV ANSIBLE_CONFIG=/etc/ansible/ansible.cfg \
