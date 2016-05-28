@@ -9,7 +9,6 @@ RUN apt update && \
     rm -rf ~/.pip/cache/ && \
     /usr/local/bin/pip install --no-cache-dir -U \
       'ansible>=1.9.4,<2.0' \
-      apt \
       jabberbot \
       httplib2 \
       ipython \
@@ -17,6 +16,7 @@ RUN apt update && \
       psutil \
       pyasn1 \
       pyopenssl \
+      python-apt \
       setuptools && \
     useradd --uid 1000 --home-dir /code app
 
