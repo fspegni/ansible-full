@@ -1,22 +1,24 @@
-FROM williamyeh/ansible:ubuntu16.04
+FROM python:2.7
 
 RUN apt update && \
     apt install -y \
+      build-essential \
+      git \
       libffi-dev \
       libssl-dev \
       libxml2-dev \
       libxslt1-dev \
-      libjpeg8-dev \
-      python-pip \
+      libjpeg62-turbo-dev \
       python-apt \
       python-dev \
       sshpass \
       zlib1g-dev && \
+
     rm -rf /var/lib/apt/lists/*
 
 RUN pip install -U pip && \
-    pip install --no-cache-dir -U \
-      ansible \
+    pip install \
+      git+https://github.com/michelesr/ansible.git@docker_common_fix \
       httplib2 \
       ipython \
       passlib \
