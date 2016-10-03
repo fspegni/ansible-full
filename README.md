@@ -1,5 +1,7 @@
 # Batteries-included Ansible Docker image
 
+[![](https://images.microbadger.com/badges/image/kobe25/ansible-full.svg)](https://microbadger.com/images/kobe25/ansible-full "Get your own image badge on microbadger.com")
+
 Mandatory file:
 
 * `inventory.ini`
