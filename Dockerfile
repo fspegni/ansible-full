@@ -18,7 +18,7 @@ RUN apt update && \
 
 RUN pip install -U pip && \
     pip install \
-      git+https://github.com/michelesr/ansible.git@docker_common_fix \
+      'ansible>=2.2' \
       httplib2 \
       ipython \
       passlib \
