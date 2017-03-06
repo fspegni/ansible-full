@@ -29,7 +29,9 @@ RUN pip install -U pip && \
       setuptools && \
     rm -rf ~/.pip/cache/
 
+RUN mkdir -p /code
 RUN useradd --uid 1000 --home-dir /code app
+RUN chown app -R /code
 
 ENV ANSIBLE_CONFIG=/etc/ansible/ansible.cfg \
     ANSIBLE_ROOT=/code \
