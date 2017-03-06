@@ -25,6 +25,7 @@ RUN pip install -U pip && \
       psutil \
       pyasn1 \
       pyopenssl \
+      docker-py \
       setuptools && \
     rm -rf ~/.pip/cache/
 
