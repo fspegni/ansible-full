@@ -18,7 +18,7 @@ RUN apt update && \
 
 RUN pip install -U pip && \
     pip install \
-      'ansible>=2.2' \
+      'ansible==2.1' \
       httplib2 \
       ipython \
       passlib \
